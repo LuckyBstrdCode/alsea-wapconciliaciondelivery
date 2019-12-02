@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Atoms/3_ico/action/List_forward</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.707,4.293 C11.316,3.902 10.684,3.902 10.293,4.293 C9.902,4.684 9.902,5.316 10.293,5.707 L20.586,16 L10.293,26.293 C9.902,26.684 9.902,27.316 10.293,27.707 C10.488,27.902 10.744,28 11,28 C11.256,28 11.512,27.902 11.707,27.707 L22.707,16.707 C23.098,16.316 23.098,15.684 22.707,15.293 L11.707,4.293 Z" id="path-1"></path>
+    </defs>
+    <g id="Atoms/3_ico/action/List_forward" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Fill-1" fill="#000000" xlink:href="#path-1"></use>
+        <g id="Atoms/1_Color_Pallete/1_Primary/Citi_Blue" mask="url(#mask-2)" fill="#004785">
+            <g transform="translate(-9.000000, -9.000000)" id="Color">
+                <rect x="-2.84217094e-14" y="-5.68434189e-14" width="49" height="49"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

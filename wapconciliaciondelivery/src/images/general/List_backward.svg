@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Atoms/3_ico/action/List_backward</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21.70725,4.29325 C21.31625,3.90225 20.68425,3.90225 20.29325,4.29325 L9.29325,15.29325 C8.90225,15.68425 8.90225,16.31625 9.29325,16.70725 L20.29325,27.70725 C20.48825,27.90225 20.74425,28.00025 21.00025,28.00025 C21.25625,28.00025 21.51225,27.90225 21.70725,27.70725 C22.09825,27.31625 22.09825,26.68425 21.70725,26.29325 L11.41425,16.00025 L21.70725,5.70725 C22.09825,5.31625 22.09825,4.68425 21.70725,4.29325" id="path-1"></path>
+    </defs>
+    <g id="Atoms/3_ico/action/List_backward" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Fill-1" fill="#000000" xlink:href="#path-1"></use>
+        <g id="Atoms/1_Color_Pallete/1_Primary/Citi_Blue" mask="url(#mask-2)" fill="#004785">
+            <g transform="translate(-9.000000, -9.000000)" id="Color">
+                <rect x="-2.84217094e-14" y="-5.68434189e-14" width="49" height="49"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
