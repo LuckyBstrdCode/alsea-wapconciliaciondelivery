@@ -3,8 +3,6 @@ import { Auth } from "aws-amplify";
 import AlseaLogo from "../images/general/ALSEA-blanco.png";
 import ModalInfo from "../components/ModalInfo";
 import api from "../services/ServiceGeneral";
-// import { ALTA_USUARIOS } from './altaUsuariosMasiva';
-import { async } from "q";
 
 
 export default function Register({ roleParams }) {
@@ -16,12 +14,12 @@ export default function Register({ roleParams }) {
   const [countries, guardarCountries] = React.useState([]);
   const [brands, guardarBrands] = React.useState([]);
   const [branches, guardarBranches] = React.useState([]);
-  const [countryId, guardarCountryId] = React.useState(0);
-  const [brandId, guardarBrandId] = React.useState(0);
-  const [branchId, guardarBranchId] = React.useState(0);
+  const [countryId, guardarCountryId] = React.useState("0");
+  const [brandId, guardarBrandId] = React.useState("0");
+  const [branchId, guardarBranchId] = React.useState("0");
   const [branchName, guardarBranchName] = React.useState('');
   const [groups, guardarGroup] = React.useState('');
-  const [error] = React.useState('');
+  const [error, guardarError] = React.useState('');
 
   const [disableCountry, guardarDisableCountry] = React.useState(true);
   const [disableBrands, guardarDisableBrands] = React.useState(true);
@@ -45,8 +43,8 @@ export default function Register({ roleParams }) {
     guardarBrands(dataBrands.content);
     guardarCountryId(countryId);
     guardarBranches([]);
-    guardarBrandId(0);
-    guardarBranchId(0);
+    guardarBrandId("0");
+    guardarBranchId("0");
     guardarBranchName('');
   };
 
@@ -61,44 +59,9 @@ export default function Register({ roleParams }) {
       guardarBranchName('');
 
     } catch (error) {
-
+      guardarError(error);
     }
   };
-
-  const cargaMasiva = async event => {
-    event.preventDefault();
-
-    console.info("Init Carga Masiva!!");
-    // console.info(ALTA_USUARIOS);
-
-    const countryId = "1";
-    // const brandId = "4"; // "ITALIANNIS"
-    const brandId = "5"; // "P.F. CHANGS"
-    // const brandId = "3"; // "PORTON"
-    // const brandId = "6"; // "STARBUCKS"
-    // const brandId = "8"; // Vips
-
-    // ALTA_USUARIOS.forEach(async alta => {
-    //   console.info(alta);
-
-    //   await Auth.signUp({
-    //     username: alta.email,
-    //     password: alta.password,
-    //     attributes: {
-    //       email: alta.email,
-    //       name: alta.nombre,
-    //       "custom:last_name": alta.nombre,
-    //       "custom:country": countryId,
-    //       "custom:brand": brandId,
-    //       "custom:branch": alta.id,
-    //       "custom:branch_name": alta.nombre,
-    //     }
-    //   });
-    //   console.info("Exito!!");
-    // });
-
-
-  }
 
 
   const handleSubmit = async event => {
@@ -134,11 +97,11 @@ export default function Register({ roleParams }) {
           }
         });
         console.info("Exito!!");
-        // this.props.history.push("/menu-config");
+        // this.props.history.push("/dashboard");
       } catch (error) {
         console.info(error);
-        // this.setState({ error: error.message });
-        // document.getElementById("show").click();
+        guardarError(error);
+
       }
     }
   };
@@ -160,19 +123,23 @@ export default function Register({ roleParams }) {
       errors.push("Email empty/undefined/null");
     }
 
+    if (password === '') {
+      errors.push("Password empty/undefined/null");
+    }
+
     if (groups === '') {
       errors.push("Grupo empty/undefined/null");
     } else if (groups !== "Admin" && groups !== "Coordinador") {
 
-      if (countryId === 0) {
+      if (countryId === "0") {
         errors.push("countryId empty/undefined/null");
       }
-      if (brandId === 0) {
+      if (brandId === "0") {
         errors.push("Marca empty/undefined/null");
       }
 
       if (groups === "Gerente") {
-        if (branchId === 0) {
+        if (branchId === "0") {
           errors.push("Sucursal empty/undefined/null");
         }
       }
@@ -187,11 +154,11 @@ export default function Register({ roleParams }) {
     guardarDisableCountry(false);
     guardarDisableBranchs(false);
     guardarDisableBrands(false);
-    guardarCountryId(0);
+    guardarCountryId("0");
     guardarBranches([]);
     guardarBrands([]);
-    guardarBrandId(0);
-    guardarBranchId(0);
+    guardarBrandId("0");
+    guardarBranchId("0");
     guardarBranchName('');
     if (e.target.value === 'Admin' || e.target.value === 'Coordinador') {
       guardarDisableCountry(true);
@@ -201,7 +168,6 @@ export default function Register({ roleParams }) {
       guardarDisableBranchs(true);
     }
   };
-
 
   const handleChangeBranch = e => {
     const branch = document.getElementById("branch");
@@ -221,10 +187,8 @@ export default function Register({ roleParams }) {
 
           <div className="card-body">
             <form
-              // onSubmit={handleSubmit}
-              onSubmit={cargaMasiva}
+              onSubmit={handleSubmit}
               className="row">
-
 
               <div className="col-12 col-xs-12 col-sm-6  col-md-6 col-lg-6">
                 <div className="form-group">
@@ -301,7 +265,6 @@ export default function Register({ roleParams }) {
                     disabled={disableBrands}
                   >
                     <option key="0" value="0">Todas las marca</option>
-                    <option key="4" value="4">ITALIANNIS</option>
                     {brands.map(brand => {
                       return <option key={brand.id} value={brand.id}>{brand.name}</option>
                     })}
@@ -317,9 +280,6 @@ export default function Register({ roleParams }) {
                     disabled={disableBranchs}
                   >
                     <option value="0">Todas las sucursal</option>
-                    <option key="1518" value="1518">WTC</option>
-
-
                     
                     {branches.map(branch => {
                       return <option key={branch.id} value={branch.id}>{branch.name}</option>
@@ -327,8 +287,6 @@ export default function Register({ roleParams }) {
 
                   </select>
                 </div>
-
-
               </div>
 
               <div className="col-12 text-right">
@@ -339,7 +297,6 @@ export default function Register({ roleParams }) {
             </form>
           </div>
         </div>
-
 
       </div>
       <ModalInfo message={error}></ModalInfo>

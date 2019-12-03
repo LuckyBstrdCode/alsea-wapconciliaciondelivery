@@ -34,7 +34,7 @@ export async function callApiPost(endpoint, body) {
 
     console.info(response);
     console.info(response.status);
-    if(response.status == 204) {
+    if(response.status === 204) {
       return true;
     }
     return response.json();
