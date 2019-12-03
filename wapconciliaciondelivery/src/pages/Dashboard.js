@@ -118,7 +118,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={mercadoPago} />
+                <img src={mercadoPago} alt="mercado pago" />
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"
@@ -139,7 +139,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={wow} />
+                <img src={wow} alt="wow"/>
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"
@@ -160,7 +160,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={openpay} />
+                <img src={openpay} alt="openpay" />
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"
@@ -181,7 +181,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={rappi} />
+                <img src={rappi} alt="rappi"/>
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"

@@ -1,5 +1,5 @@
 import React from "react";
-import ReactExport from "react-data-export";
+import ReactExport from "react-export-excel";
 
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
@@ -7,13 +7,11 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 function DownloadExcel(props) {
 
-    console.info(props);
-
     return (
         <ExcelFile 
             filename={'reporte'}
             element={<button 
-            disabled={(props.dataSet.length == 0)} 
+            disabled={(props.dataSet.length === 0)} 
             className="btn btn-primary w-100 mb-3 mt-2">Generar Reporte</button>}>
             <ExcelSheet data={props.dataSet} name="Reporte">
                 <ExcelColumn label="Tienda" value="branch" />
