@@ -2,6 +2,22 @@
   width: 100% !important;
 }
 
+.dropdown-menu {
+  left: -140px !important;
+
+  }
+
+.azul_alsea_back{
+background-color: #00587C;
+}
+
+.nav-link {
+  color:#fff !important;
+ 
+}
+.navbar-brand img {
+  margin-left: 20px;
+}
 body {
   background: #f2f4f8;
   display: flex;
@@ -9,7 +25,10 @@ body {
   align-items: center;
   flex-wrap: wrap;
   height: 100vh;
-  font-family: "Open Sans" !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",
+  Roboto,"Helvetica Neue",Arial,"Noto Sans",
+  sans-serif,"Apple Color Emoji","Segoe UI Emoji",
+  "Segoe UI Symbol","Noto Color Emoji";
 }
 
 label{
@@ -19,7 +38,72 @@ label{
   font-weight: 300;
 
 }
+a{
+  color: #26D07C !important;
+}
+a:hover{
+  color: #71C5E8 !important;
+}
 
+
+.container-fluid-login{
+  padding:0px;
+
+}
+
+.login-a{
+width: 50%;
+background-color: #004F71;
+height: 100vh;
+display: -webkit-box;
+display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+justify-content: flex-end;
+}
+.login-b{
+  width: 50%;
+  height: 100vh;
+  background-color: #fff;
+  display: -moz-box;
+display: -ms-flexbox;
+display: -webkit-flex;
+display: flex;
+align-items: center;
+
+}
+.LogoLogin-On-Mobile{
+  width: 150px;
+  height: 100px;  
+  display:none;
+}
+.LogoLogin-On-Mobile img{ 
+  width: 100%;
+  height: auto;
+}
+
+.login-logo{
+  width: 300px;
+  height: 150px;
+  margin-top: 100px;
+}
+.login-logo img{ 
+  width: 150px;
+  height: auto;
+}
+.card-title-login {
+  margin-bottom: .75rem;
+  color: #71C5E8;
+}
+
+.app-title{
+  color: #71C5E8;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2pt;
+}
 .card-select {
   background-color: 
 #fff;
@@ -194,7 +278,7 @@ border: none;
   border-bottom: 1px solid #eaeaea;
 }
 .muted {
-  color: #909090;
+  color: #869ab8 !important;
 }
 
 .form-control-label {
@@ -464,11 +548,13 @@ border: none;
 }
 .card-login {
   margin: 50px auto;
-  background-color: #ffff;
+  background-color: #fff;
+  width: 80%;
 }
 
 .card-head {
-  padding: 8px 50px 20px 50px;
+  padding: 8px 30px 20px 30px;
+  display:none;
   background-color: #ffff;
   /*background: linear-gradient(50deg,#298FC2,#41C8FF)!important;*/
 }
@@ -1664,11 +1750,17 @@ flex-wrap: wrap;
 
 .btn-primary {
   color: #fff;
-  background-color: #26D07C !important; 
-  border-color: #26D07C !important;
+  background-color: #41B6E6 !important; 
+  border-color: #41B6E6 !important;
 }
 .btn-primary:hover  {
   color: #fff;
-  background-color: #4B9560!important;  
-  border-color: #4B9560 !important;
+  background-color: #71C5E8 !important;  
+  border-color: #71C5E8 !important;
+}
+
+.btn-login{
+  text-align: center;
+  font-weight: 300;
+  padding:10px 0px;
 }

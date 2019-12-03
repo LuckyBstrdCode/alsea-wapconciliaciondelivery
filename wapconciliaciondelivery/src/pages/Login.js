@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import AlseaLogo from "../images/general/ALSEA-blanco.png";
+import AlseaLogoBlue from "../images/general/ALSEA-azul.png";
 import { Auth } from "aws-amplify";
 
 export default class Login extends Component {
@@ -65,14 +66,27 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="main-content container-fluid display_justify-content_center">
-        <div className="card card-login">
-          <div className="card-head display_justify-content_center display_align_items_center AzulClaroBkgd">
-            <img alt="Logo Alsea" src={AlseaLogo} />
+      <div className=" container-fluid-login display_justify-content_center">
+        <div className="login-a">
+          <div className="login-logo">
+          <img alt="Logo Alsea" src={AlseaLogo} />
+          <p className="app-title">Conciliaciones</p>
+          </div>
+       
+        </div>
+        <div className="LogoLogin-On-Mobile"> 
+        <img alt="Logo Alsea" src={AlseaLogoBlue} />
+        </div>
+        <div className="login-b">
+       
+        <div className=" card-login">
+          <div className="card-head display_justify-content_center display_align_items_center ">
+ 
+        
           </div>
           <div className="card-body">
-            <h5 className="card-title text-center mt-3">Entrar</h5>
-            <p className="card-text font-w-200 muted text-center font-9">
+            <h5 className="card-title-login mt-3">Entrar</h5>
+            <p className="card-text font-w-200 muted  font-9">
               Escribe tu usuario y contraseña para poder acceder.
               </p>
 
@@ -118,14 +132,17 @@ export default class Login extends Component {
                 Recuperar contraseña
                 </Link>
 
-              <div className="mt-3 col-12 text-right pr-0">
-                <button className="border-none btn btn-primary text-left primary-green-back">
-                  Entrar
+              <div className="mt-3 col-12 text-right pr-0 pl-0">
+                <button className="border-none btn btn-primary btn-login  w-100 font-10">
+                  ENTRAR
                   </button>
               </div>
             </form>
           </div>
         </div>
+         </div>
+
+
       </div>
     );
   }

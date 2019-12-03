@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.css';
+import './responsive.css';
 // import "./Alsea.css";
 // import "./Alsea-sucursales.css";
 // import "./Alsea-responsive.css";
