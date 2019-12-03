@@ -59,10 +59,17 @@ function Dashboard() {
     const consultarAPIMP = async () => {
       if (fromDateMP !== '' && toDateMP !== '') {
         guardarIsLoading(true);
+        const validDates = validateTwoDates(fromDateMP,toDateMP);
 
+        if(validDates) {
+          setMercadoPagoData(dataSet);
+        } else {
+          setMercadoPagoData([]);
+        }
 
-        setMercadoPagoData(dataSet);
         guardarIsLoading(false);
+      } else {
+        setMercadoPagoData([]);
       }
     }
     consultarAPIMP();
@@ -73,9 +80,17 @@ function Dashboard() {
     const consultarAPI = async () => {
       if (fromDateWow !== '' && toDateWow !== '') {
         guardarIsLoading(true);
+        const validDates = validateTwoDates(fromDateWow,toDateWow);
 
-        setWowData(dataSet);
-        guardarIsLoading(false);
+        if(validDates) {
+          setWowData(dataSet);
+        } else {
+          setWowData([]);
+        }
+
+        // guardarIsLoading(false);
+      } else {
+        setWowData([]);
       }
     }
     consultarAPI();
@@ -106,6 +121,14 @@ function Dashboard() {
     }
     consultarAPI();
   }, [fromDateRappi, toDateRappi]);
+
+  const validateTwoDates = (first, second) => {
+    if ((new Date(first).getTime() <= new Date(second).getTime())) {
+      console.info("It's Ok");
+      return true;
+    }
+    return false;
+  }
 
 
   return (
@@ -139,7 +162,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={wow} alt="wow"/>
+                <img src={wow} alt="wow" />
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"
@@ -181,7 +204,7 @@ function Dashboard() {
 
             <div className="card-container">
               <div className="card-select card-animate card-color-style">
-                <img src={rappi} alt="rappi"/>
+                <img src={rappi} alt="rappi" />
                 <div>
                   <label>Fecha inicial</label>
                   <input className="form-control mb-2" type="date"
