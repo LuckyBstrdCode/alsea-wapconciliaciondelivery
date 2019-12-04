@@ -95,10 +95,10 @@ function Dashboard() {
         if (validateTwoDates(fromDate, toDate)) {
           console.info("002");
           // const data = await api.services.getPayments(1, 2, paymentId);
-          const data = dataMock;
-          console.info(data);
+          // console.info(data);
+          // dataPayments = data;
 
-          return data;
+          dataPayments = dataMock;
         }
       }
     } catch (error) {
