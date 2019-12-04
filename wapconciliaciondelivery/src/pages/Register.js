@@ -5,7 +5,7 @@ import ModalInfo from "../components/ModalInfo";
 import api from "../services/ServiceGeneral";
 
 
-export default function Register({ roleParams }) {
+export default function Register( ) {
 
   const [name, guardarName] = React.useState('');
   const [lastName, guardarLastname] = React.useState('');

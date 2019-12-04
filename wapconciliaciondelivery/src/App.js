@@ -26,6 +26,13 @@ class App extends Component {
     };
   }
 
+  protectedComponent = () => {
+    // if (authFails)
+    //   return <Redirect to='/login' />
+    console.info(this.state.isAuthenticated);
+    return this.state.isAuthenticated;
+  }
+
   updateValuesSuperMenu = (props) => {
     this.setState({
       vistaPrevia: props
@@ -48,7 +55,9 @@ class App extends Component {
 
     try {
       this.setAuthStatus(true);
+
       const user = await Auth.currentAuthenticatedUser();
+      console.info(user);
 
       // const group = user.attributes['custom:group'];
       const group = "Admin";
@@ -63,8 +72,10 @@ class App extends Component {
 
       this.setParams(attributes);
       this.setGroup(group);
+
     } catch (error) {
       console.log(error);
+      this.setAuthStatus(false);
     }
     this.setState({ isAuthenticating: false });
   }
@@ -79,43 +90,66 @@ class App extends Component {
       setParams: this.setParams,
       setGroup: this.setGroup
     };
+
+    
     return (
       !this.state.isAuthenticating && (
+
         <BrowserRouter>
           <Switch>
             <Route exact path="/"
               render={props => <Login {...props} auth={authProps} />} />
 
             <Route exact path="/forgotpassword"
-              render={(props) => <ForgotPassword {...props} auth={authProps} />} />
+              render={props => {
+                return <ForgotPassword {...props} auth={authProps} />
+              }}
+            />
 
             <Route exact path="/forgotpasswordverification"
-              render={(props) => <ForgotPasswordVerification {...props} auth={authProps} />} />
+              render={(props) => <ForgotPasswordVerification {...props} auth={authProps} />}
+            />
 
             <Layout vistaPrevia={this.state.vistaPrevia} auth={authProps}>
 
               <Route exact path="/changepassword"
-                render={(props) => <ChangePassword {...props} auth={authProps} />} />
+
+                render={props => {
+                  if (this.protectedComponent()) {
+                    return <ChangePassword {...props} auth={authProps} />
+                  }
+                  return <Redirect to='/' />
+                }}
+
+              />
 
               <Route exact path="/changepasswordconfirmation"
-                render={(props) => <ChangePasswordConfirm {...props} auth={authProps} />} />
+                render={props => {
+                  if (this.protectedComponent()) {
+                    return <ChangePasswordConfirm {...props} auth={authProps} />
+                  }
+                  return <Redirect to='/' />
+                }}
+              />
 
               <Route exact
                 path="/register"
                 render={props => {
-                  if (!this.state.isAuthenticated) {
-                    return <Redirect to='/' />
-                  } else if (this.state.group && (this.state.group === "Admin" || this.state.group === "Coordinador")) {
-                    return <Register {...props} auth={authProps} roleParams={this.state.params} />
+                  if (this.protectedComponent()) {
+                    return <Register {...props} auth={authProps} />
                   }
-                  return <Redirect to='/dashboard' />
-                }} />
-              
+                  return <Redirect to='/' />
+                }}
+              />
+
               <Route
                 exact
                 path="/dashboard"
                 render={props => {
-                  return <Dashboard {...props} auth={authProps} />
+                  if (this.protectedComponent()) {
+                    return <Dashboard {...props} auth={authProps} />
+                  }
+                  return <Redirect to='/' />
                 }}
               />
 
@@ -125,6 +159,6 @@ class App extends Component {
       )
     );
   }
-} 
+}
 
 export default App;

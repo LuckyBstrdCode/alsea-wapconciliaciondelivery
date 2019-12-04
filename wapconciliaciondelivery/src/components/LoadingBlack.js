@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../";
+import "./styles/load.css";
 
 class LoadingBlack extends React.Component {
   render() {

@@ -1,7 +1,8 @@
-import { callApiGet, callApiPost } from './crud';
+import { callApiGet, getToken } from './crud';
 
 import {
-  BASE_URL
+  BASE_URL,
+  SWITCH_B
 } from '../constants/api_url';
 
 
@@ -16,8 +17,17 @@ const api = {
     listBranches(countryId, brandId) {
       return callApiGet(`${BASE_URL}/branches?countryId=${countryId}&brandId=${brandId}`);
     },
+
+    getTokenPayments() {
+      return getToken();
+    },
+
+
+    getPayments(initialDate, endDate, paymentMethodId) {
+      return callApiGet(`${SWITCH_B}/report/payments?endDate=${endDate}&initialDate=${initialDate}&paymentMethodId=${paymentMethodId}`);
+    },
+
   }
 };
-
 
 export default api;

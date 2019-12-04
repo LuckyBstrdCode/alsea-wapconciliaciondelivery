@@ -56,6 +56,7 @@ export default class Login extends Component {
 
   componentDidMount() {
     try {
+      console.log("Eliminar Session");
       Auth.signOut();
       this.props.auth.setAuthStatus(false);
       this.props.auth.setParams(null);
