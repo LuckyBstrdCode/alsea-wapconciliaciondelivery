@@ -79,7 +79,7 @@ class ForgotPassword extends Component {
             </div>
             <div className="card-body">
             <h5 className="card-title-login mt-3">¿Olvidaste tu contraseña?</h5>
-              <h5 className="card-title text-center mt-3"></h5>
+ 
               <p className="card-text font-w-200 muted  font-9">
                 Ingresa la dirección de correo asociada a tu cuenta y nosotros te enviaremos un email con un link para reestablecer tu contraseña.
               </p>
@@ -87,7 +87,7 @@ class ForgotPassword extends Component {
               <form onSubmit={this.forgotPasswordHandler}>
 
                 <div className="col-12 form-group pr-0 pl-0">
-                  <input
+                  <input 
                     className="form-control"
                     type="email"
                     id="email"

@@ -4,7 +4,8 @@ import openpay from './../images/general/openpay.png';
 import wow from './../images/general/wow.png';
 import rappi from './../images/general/rappi.png';
 import DownloadExcel from './../components/DownloadExcel';
-import LoadingBlack from './../components/LoadingBlack'
+import LoadingBlack from './../components/LoadingBlack';
+import boxMenu from './../components/boxMenu';
 
 const dataSet = [
   {
@@ -225,7 +226,8 @@ function Dashboard() {
 
 
           </div>
-
+          
+          <boxMenu></boxMenu>
         </div>
         <div className="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-1"></div>
       </div>
