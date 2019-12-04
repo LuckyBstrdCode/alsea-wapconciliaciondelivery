@@ -65,17 +65,28 @@ class ForgotPasswordVerification extends Component {
 
       <section className="section auth">
 
-<div className=" main-content container-fluid display_justify-content_center">
-        <div className="card card-register col-12 col-xs-10 col-sm-8 col-md-6  col-lg-4 pl-0 pr-0">
+<div className=" container-fluid-login display_justify-content_center">
+
+     <div className="login-a">
+          <div className="login-logo">
+          <img alt="Logo Alsea" src={AlseaLogo} />
+          <p className="app-title">New Password</p>
+          </div>
+       
+        </div>
+
+        <div className="login-b">
+        <div className="card-login">
         <div className="card-head p-4 display_justify-content_center display_align_items_center AzulClaroBkgd">
         <img alt="Logo Alsea" src={AlseaLogo} />
     
             </div>
 
             <div className="card-body">
+            <h5 className="card-title-login mt-3">Establecer nueva contraseña</h5>
 
-            <h5 className="card-title text-center mt-3">Establecer nueva contraseña</h5>
-              <p className="card-text font-w-200 muted text-center font-9">
+       
+              <p className="card-text font-w-200 muted  font-9">
             Por favor ingresa el código de verificación enviado a tu email, tu dirección de correo y una nueva contraseña.
          
               </p>
@@ -83,8 +94,8 @@ class ForgotPasswordVerification extends Component {
               <FormErrors formerrors={this.state.errors} />
 
 <form onSubmit={this.passwordVerificationHandler} className="row">
-  
-  <div className="field col-12 form-group">
+   
+  <div className="field col-12 form-group " >
    
       <input
         type="text"
@@ -97,7 +108,7 @@ class ForgotPasswordVerification extends Component {
       />
     
   </div>
-  <div className="field col-12 form-group">
+  <div className="field col-12 form-group ">
     
       <input 
         className="form-control" 
@@ -110,7 +121,7 @@ class ForgotPasswordVerification extends Component {
       />
 
   </div>
-  <div className="field field col-12 form-group">
+  <div className="field field col-12 form-group ">
    
       <input
         type="password"
@@ -123,9 +134,9 @@ class ForgotPasswordVerification extends Component {
   
   </div>
 
-  <div className="field col-12 text-right">
+  <div className="field col-12 text-right ">
               <p className="control ">
-                <button className="button is-success border-none btn btn-primary text-left primary-green-back">
+                <button className="border-none btn btn-primary btn-login w-100 font-10 ">
                   Enviar
                 </button>
               </p>
@@ -137,7 +148,7 @@ class ForgotPasswordVerification extends Component {
         </div>
         </div>
         </div>
-
+        </div>
 
 
 

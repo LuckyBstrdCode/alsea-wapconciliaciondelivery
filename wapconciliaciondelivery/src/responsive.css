@@ -14,6 +14,9 @@
     display:none ;
   } 
   
+  .show-hamburger-title{
+      display:none;
+  }
   @media screen and (max-width: 1200px) {
     
 
@@ -21,6 +24,12 @@
   }
   
   @media screen and (max-width: 991px) {
+      .hide-hamburger-title{
+          display:none;
+      }
+      .show-hamburger-title{
+        display:block;
+    }
        .card-login {
         margin: 50px auto;
         background-color: #fff;
@@ -70,7 +79,7 @@
   }
 
   .LogoLogin-On-Mobile{
-    width: 150px;
+    width: 200px;
     height: 90px;
     display:block;
   }
