@@ -5,7 +5,7 @@ import ModalInfo from "../components/ModalInfo";
 import api from "../services/ServiceGeneral";
 
 
-export default function Register( ) {
+export default function Register() {
 
   const [name, guardarName] = React.useState('');
   const [lastName, guardarLastname] = React.useState('');
@@ -97,7 +97,7 @@ export default function Register( ) {
           }
         });
         console.info("Exito!!");
-        // this.props.history.push("/dashboard");
+        this.props.history.push("/dashboard");
       } catch (error) {
         console.info(error);
         guardarError(error);
@@ -280,7 +280,7 @@ export default function Register( ) {
                     disabled={disableBranchs}
                   >
                     <option value="0">Todas las sucursal</option>
-                    
+
                     {branches.map(branch => {
                       return <option key={branch.id} value={branch.id}>{branch.name}</option>
                     })}

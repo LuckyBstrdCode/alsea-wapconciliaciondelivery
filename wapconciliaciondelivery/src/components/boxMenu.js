@@ -10,6 +10,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import AlseaLogoBlue from "../images/general/ALSEA-azul.png";
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   list: {
@@ -35,16 +36,26 @@ export default function TemporaryDrawer() {
   };
 
   const sideList = side => (
-    <div className={classes.list}> 
-    <div className="Logo-BoxMenu">
-    <img alt="Logo Alsea" src={AlseaLogoBlue} />
-    <p>Conciliaciones</p>
-    </div>
+    <div className={classes.list}>
+      <div className="Logo-BoxMenu">
+        <img alt="Logo Alsea" src={AlseaLogoBlue} />
+        <p>Conciliaciones</p>
+      </div>
 
-    <Divider />
-    <MenuItem style={{ color: blueGrey[700] }}><PersonAddIcon className="pr-2" style={{ color: blueGrey[300] }}  /> Registro</MenuItem>
-    <MenuItem style={{ color: blueGrey[700] }}><VpnKeyIcon className="pr-2" style={{ color: blueGrey[300] }}  /> Contraseña</MenuItem>
-    <MenuItem style={{ color: blueGrey[700] }}><PowerSettingsNewIcon className="pr-2" style={{ color: blueGrey[300] }}  /> Salir</MenuItem>
+      <Divider />
+
+      <MenuItem style={{ color: blueGrey[700] }}>
+        <Link to={'/register'}><PersonAddIcon className="pr-2" style={{ color: blueGrey[300] }} /> Registro </Link>
+      </MenuItem>
+
+      <MenuItem style={{ color: blueGrey[700] }}>
+        <Link to={'/changepassword'}><VpnKeyIcon className="pr-2" style={{ color: blueGrey[300] }} /> Contraseña </Link>
+      </MenuItem>
+
+      <MenuItem style={{ color: blueGrey[700] }}>
+        <Link to={"/"} className="hamburger-detail"><PowerSettingsNewIcon className="pr-2" style={{ color: blueGrey[300] }} /> Salir </Link>
+      </MenuItem>
+
     </div>
 
   );
@@ -54,9 +65,9 @@ export default function TemporaryDrawer() {
     <div>
 
       <Button onClick={toggleDrawer('left', true)}>
-      <MenuIcon style={{ color: grey[50] }}  />
+        <MenuIcon style={{ color: grey[50] }} />
       </Button>
-      
+
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </Drawer>
