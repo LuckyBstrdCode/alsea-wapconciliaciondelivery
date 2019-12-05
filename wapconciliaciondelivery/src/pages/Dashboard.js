@@ -28,22 +28,22 @@ import {
 
 const dataMock = [
   {
-    branch: "7097",
-    account: "33333333365501945930",
-    date: "24/10/2019",
-    code: "100",
+    branchId: "7097",
+    accountNumber: "33333333365501945930",
+    applicationDate: "24/10/2019",
+    bankCode: "100",
     description: "DEPOSITO",
-    signo: "+",
+    sign: "+",
     amount: "69",
     affiliation: "204232385",
   },
   {
-    branch: "7097",
-    account: "33333333365501945930",
-    date: "24/10/2019",
-    code: "COM7097NB",
+    branchId: "7097",
+    accountNumber: "33333333365501945930",
+    applicationDate: "24/10/2019",
+    bankCode: "COM7097NB",
     description: "COMISION",
-    signo: "-",
+    sign: "-",
     amount: "0.93",
     affiliation: "204232385",
   },
@@ -85,10 +85,10 @@ function Dashboard() {
 
 
   const getPayments = async (fromDate, toDate, paymentId) => {
-    
+
     guardarIsLoading(true);
     let dataPayments = [];
-   
+
     try {
       if (fromDate !== null && toDate !== null) {
         console.info("001");
@@ -150,8 +150,8 @@ function Dashboard() {
 
   const validateTwoDates = (first, second) => {
 
-        // let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds() 
-        // console.log(formatted_date)
+    let formatted_date = first.getFullYear() + "-" + (first.getMonth() + 1) + "-" + first.getDate();
+    console.log(formatted_date)
     if (first !== null && second !== null && (new Date(first).getTime() <= new Date(second).getTime())) {
       console.info("It's Ok");
       return true;
