@@ -70,10 +70,6 @@ export async function callApiPut(endpoint, body) {
  */
 export async function getToken(endpoint, body) {
 
-
-  console.info("1234t");
-
-  
   var request = new Request("https://deliverybeta.auth.us-east-1.amazoncognito.com/oauth2/token", {
     headers: {
       "Authorization": "Basic N3YzaW5lYjc5NGpiZTQxbzBhZWlxc28xbm46MTdidTA0bGNqa2gwMmNtNWtsMW5uM2JsbnA4ZDExdWRsdGNhcGk0YXM5aTNmaXFpMXVlbQ==",

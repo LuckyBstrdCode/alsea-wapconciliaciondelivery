@@ -190,6 +190,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                       <KeyboardDatePicker
@@ -208,6 +210,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                     </Grid>
@@ -241,6 +245,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                       <KeyboardDatePicker
@@ -259,6 +265,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                     </Grid>
@@ -292,6 +300,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                       <KeyboardDatePicker
@@ -310,6 +320,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
                     </Grid>
                   </MuiPickersUtilsProvider>
@@ -342,6 +354,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
 
                       <KeyboardDatePicker
@@ -360,6 +374,8 @@ function Dashboard() {
                         }}
                         minDate={new Date('2019/11/01')}
                         maxDate={new Date()}
+                        cancelLabel={'Cancelar'}
+                        okLabel={'Aceptar'}
                       />
                     </Grid>
                   </MuiPickersUtilsProvider>
