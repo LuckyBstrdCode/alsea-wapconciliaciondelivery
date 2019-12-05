@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+var querystring = require('querystring');
 
 /*
  *  GET
@@ -69,14 +69,18 @@ export async function callApiPut(endpoint, body) {
  * AWS
  */
 export async function getToken(endpoint, body) {
+
+
+  console.info("1234t");
+
+  
   var request = new Request("https://deliverybeta.auth.us-east-1.amazoncognito.com/oauth2/token", {
     headers: {
       "Authorization": "Basic N3YzaW5lYjc5NGpiZTQxbzBhZWlxc28xbm46MTdidTA0bGNqa2gwMmNtNWtsMW5uM2JsbnA4ZDExdWRsdGNhcGk0YXM5aTNmaXFpMXVlbQ==",
-      "Content-Type": "application/x-www-form-urlencoded",
+      'content-type': 'application/x-www-form-urlencoded',
     },
     method: "post",
-    body: JSON.stringify({
-      "grant_type": "client_credentials", scope: "https://delivery.com/epayment"})
+    body: querystring.stringify({"grant_type": "client_credentials", "scope": "https://delivery.com/epayment"})
   });
 
   const response = await fetch(request).then(response => {
