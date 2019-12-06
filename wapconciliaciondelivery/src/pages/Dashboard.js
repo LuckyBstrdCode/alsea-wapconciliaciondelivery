@@ -9,7 +9,6 @@ import DownloadExcel from './../components/DownloadExcel';
 import LoadingBlack from './../components/LoadingBlack'
 import api from "../services/ServiceGeneral";
 
-
 import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -17,37 +16,12 @@ import {
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-
 import {
   PAYMENT_METHOD_ID_MERCADOPAGO,
   PAYMENT_METHOD_ID_WOW,
   PAYMENT_METHOD_ID_RAPPI,
   PAYMENT_METHOD_ID_OPENPAY
 } from "../constants/constants"
-
-
-const dataMock = [
-  {
-    branchId: "7097",
-    accountNumber: "33333333365501945930",
-    applicationDate: "24/10/2019",
-    bankCode: "100",
-    description: "DEPOSITO",
-    sign: "+",
-    amount: "69",
-    affiliation: "204232385",
-  },
-  {
-    branchId: "7097",
-    accountNumber: "33333333365501945930",
-    applicationDate: "24/10/2019",
-    bankCode: "COM7097NB",
-    description: "COMISION",
-    sign: "-",
-    amount: "0.93",
-    affiliation: "204232385",
-  },
-];
 
 
 function Dashboard() {
@@ -74,8 +48,8 @@ function Dashboard() {
   useEffect(() => {
     const consultarAPIMP = async () => {
       try {
-        const data = await api.services.getTokenPayments(1, 2, PAYMENT_METHOD_ID_MERCADOPAGO);
-        console.info(data);
+        const dataToken = await api.services.getTokenPayments(1, 2, PAYMENT_METHOD_ID_MERCADOPAGO);
+        console.info(dataToken.access_token);
       } catch (error) {
 
       }
@@ -91,14 +65,15 @@ function Dashboard() {
 
     try {
       if (fromDate !== null && toDate !== null) {
-        console.info("001");
-        if (validateTwoDates(fromDate, toDate)) {
-          console.info("002");
-          // const data = await api.services.getPayments(1, 2, paymentId);
-          // console.info(data);
-          // dataPayments = data;
 
-          dataPayments = dataMock;
+        if (validateTwoDates(fromDate, toDate)) {
+
+          const dataToken = await api.services.getTokenPayments(1, 2, PAYMENT_METHOD_ID_MERCADOPAGO);
+
+          const data = await api.services.getPayments(1, 2, paymentId, dataToken.access_token);
+          console.info(data);
+          dataPayments = data;
+
         }
       }
     } catch (error) {

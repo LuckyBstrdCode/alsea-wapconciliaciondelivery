@@ -1,4 +1,4 @@
-import { callApiGet, getToken } from './crud';
+import { callApiGet, getToken, callApiGetWithToken } from './crud';
 
 import {
   BASE_URL,
@@ -23,8 +23,8 @@ const api = {
       return getToken();
     },
 
-    getPayments(initialDate, endDate, paymentMethodId) {
-      return callApiGet(`${SWITCH_B}/report/payments?endDate=${endDate}&initialDate=${initialDate}&paymentMethodId=${paymentMethodId}`);
+    getPayments(initialDate, endDate, paymentMethodId, token) {
+      return callApiGetWithToken(`${SWITCH_B}/report/payments?endDate=${endDate}&initialDate=${initialDate}&paymentMethodId=${paymentMethodId}`, token);
     },
 
   }

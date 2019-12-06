@@ -87,7 +87,19 @@ export async function getToken(endpoint, body) {
 }
 
 
+export async function callApiGetWithToken(endpoint, token) {
+  var request = new Request(endpoint, {
+    headers: {
+      "X-User-Agent": "qwe",
+      "Authorization" : `Bearer ${token}`
+    }
+  });
+  const response = await fetch(request).then(response => {
+    return response.json();
+  });
 
+  return response;
+}
 
 
 
