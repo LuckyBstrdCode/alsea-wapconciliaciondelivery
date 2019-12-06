@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import { Auth } from "aws-amplify";
+import { Link } from "react-router-dom";
 import AlseaLogo from "../images/general/ALSEA-blanco.png";
 import ModalInfo from "../components/ModalInfo";
 import api from "../services/ServiceGeneral";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 
 export default function Register() {
@@ -178,19 +180,37 @@ export default function Register() {
 
   return (
     <Fragment>
-      <div className="main-content container-fluid display_justify-content_center">
-        <div className="card card-login">
-          <div className="card-head display_justify-content_center display_align_items_center AzulClaroBkgd">
+      <div className="container-fluid-login">
+      <div className="login-a">
+        <div className="Return-Sign-Content">
+       <Link><ArrowBackIcon /></Link> 
+        </div>
+          <div className="login-logo">
             <img alt="Logo Alsea" src={AlseaLogo} />
+            <p className="app-title font-9">CONCILACIONES / New Users</p>
           </div>
-          <h5 className="card-title text-center mt-3">Registrar usuario</h5>
+        </div>
+
+
+
+        <div className="Return-Sign-Content-movile">
+          <Link><ArrowBackIcon /></Link> 
+        </div>
+
+        <div className="login-b">
+        <div className=" card-login">
+          <div className="card-head display_justify-content_center display_align_items_center">
+           
+          </div>
+         
 
           <div className="card-body">
+          <h5 className="card-title-login mt-3">Registrar usuario</h5>
             <form
               onSubmit={handleSubmit}
               className="row">
 
-              <div className="col-12 col-xs-12 col-sm-6  col-md-6 col-lg-6">
+              <div className="col-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
                 <div className="form-group">
                   <input
                     placeholder="Nombre"
@@ -229,7 +249,7 @@ export default function Register() {
                   />
                 </div>
               </div>
-
+{/* 
               <div className="col-12 col-xs-12 col-sm-6  col-md-6 col-lg-6">
                 <div className="form-group">
                   <select className="form-control" id="group" onChange={handleChangeGroup} >
@@ -287,17 +307,17 @@ export default function Register() {
 
                   </select>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="col-12 text-right">
-                <button className="border-none btn btn-primary text-left primary-green-back">
+              <div className="mt-3 col-12 text-right ">
+                <button className="border-none btn btn-primary btn-login  w-100 font-10">
                   Registrar
                   </button>
               </div>
             </form>
           </div>
         </div>
-
+        </div>
       </div>
       <ModalInfo message={error}></ModalInfo>
     </Fragment>

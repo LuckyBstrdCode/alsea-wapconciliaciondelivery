@@ -110,20 +110,29 @@ class App extends Component {
               render={(props) => <ForgotPasswordVerification {...props} auth={authProps} />}
             />
 
-            <Layout vistaPrevia={this.state.vistaPrevia} auth={authProps}>
 
-              <Route exact path="/changepassword"
 
+               <Route exact
+                path="/register"
                 render={props => {
                   if (this.protectedComponent()) {
-                    return <ChangePassword {...props} auth={authProps} />
+                    return <Register {...props} auth={authProps} />
                   }
                   return <Redirect to='/' />
                 }}
+              /> 
 
-              />
+             <Route exact path="/changepassword"
 
-              <Route exact path="/changepasswordconfirmation"
+            render={props => {
+            if (this.protectedComponent()) {
+            return <ChangePassword {...props} auth={authProps} />
+             }
+            return <Redirect to='/' />
+            }}
+            />
+
+            <Route exact path="/changepasswordconfirmation"
                 render={props => {
                   if (this.protectedComponent()) {
                     return <ChangePasswordConfirm {...props} auth={authProps} />
@@ -132,15 +141,7 @@ class App extends Component {
                 }}
               />
 
-              <Route exact
-                path="/register"
-                render={props => {
-                  if (this.protectedComponent()) {
-                    return <Register {...props} auth={authProps} />
-                  }
-                  return <Redirect to='/' />
-                }}
-              />
+            <Layout vistaPrevia={this.state.vistaPrevia} auth={authProps}>
 
               <Route
                 exact

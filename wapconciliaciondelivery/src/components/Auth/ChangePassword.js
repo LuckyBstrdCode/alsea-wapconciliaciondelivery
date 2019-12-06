@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+
 import { Redirect } from "react-router-dom";
 import FormErrors from "../FormErrors";
 import Validate from "../utility/FormValidation";
 import { Auth } from 'aws-amplify';
 import AlseaLogo from "../../images/general/ALSEA-blanco.png";
+import { Link } from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 class ChangePassword extends Component {
   state = {
@@ -73,14 +76,29 @@ class ChangePassword extends Component {
   }
     return (
       <section className="section auth">
-        <div className=" main-content container-fluid display_justify-content_center">
-        <div className="card card-register col-12 col-xs-10 col-sm-8 col-md-6  col-lg-4 pl-0 pr-0">
-        <div className="card-head display_justify-content_center display_align_items_center AzulClaroBkgd">
-        <img alt="Logo Alsea" src={AlseaLogo} />
-    
-            </div>
-            <h5 className="card-title text-center mt-3">Cambiar contraseña</h5>
+        
+        <div className=" container-fluid-login">
+        <div className="login-a">
+        <div className="Return-Sign-Content">
+       <Link><ArrowBackIcon /></Link> 
+        </div>
+          <div className="login-logo">
+            <img alt="Logo Alsea" src={AlseaLogo} />
+            <p className="app-title font-9">CONCILACIONES / New Password</p>
+          </div>
+        </div>
+
+        <div className="Return-Sign-Content-movile">
+          <Link><ArrowBackIcon /></Link> 
+        </div>
+
+
+        <div className="login-b">
+        <div className="card-login">
+
+          
             <div className="card-body">
+            <h5 className="card-title-login mt-3">Cambiar contraseña</h5>
           <FormErrors formerrors={this.state.errors} />
 
           <form onSubmit={this.handleSubmit} className="row">
@@ -125,14 +143,15 @@ class ChangePassword extends Component {
                
             </div>
             
-            <div className="field col-12 text-right">
+            <div className="mt-3 col-12 text-right">
               <p className="control ">
-                <button className="border-none btn btn-primary text-left primary-green-back">
+                <button className="border-none btn btn-primary btn-login  w-100 font-10">
                   Actualizar contraseña 
                 </button>
               </p>
             </div>
           </form>
+        </div>
         </div>
         </div>
         </div>

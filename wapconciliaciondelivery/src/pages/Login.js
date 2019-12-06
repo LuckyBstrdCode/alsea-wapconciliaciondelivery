@@ -69,6 +69,10 @@ export default class Login extends Component {
     return (
       <div className=" container-fluid-login display_justify-content_center">
         <div className="login-a">
+
+        <div className="Return-Sign-Content">
+    
+        </div>
           <div className="login-logo">
             <img alt="Logo Alsea" src={AlseaLogo} />
             <p className="app-title">Conciliaciones</p>

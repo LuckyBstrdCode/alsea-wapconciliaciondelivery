@@ -75,6 +75,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        justify-content: flex-start;
     } 
 
     .login-b {
@@ -90,6 +91,12 @@
     height: 90px;
     display:block;
   }
+  .Return-Sign-Content-movile {
+   display: block;
+    padding: 20px 0px 0px 20px;
+}
+
+
 }
   
   @media screen and (max-width: 576px) {
